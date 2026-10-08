@@ -1,0 +1,11 @@
+services:
+  api:
+    build:
+      context: .
+      args:
+        HF_REPO: microsoft/VibeVoice-ASR-BitNet
+        BUILD_THREADS: "4"
+    ports:
+      - "6551:6551"
+    env_file: .env
+    # CPU-only model — no GPU device needed.
